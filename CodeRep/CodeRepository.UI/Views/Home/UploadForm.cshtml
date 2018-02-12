@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "UploadForm";
+}
+@model CodeRepository.UI.Models.ProjectModel 
+<h3>Add New Project</h3>
+@*<form enctype="multipart/form-data" method="post" action="http://localhost:33803/api/projects" id="ajaxUploadForm" novalidate="novalidate">*@
+@using (Html.BeginForm("UploadProjects", "Home", FormMethod.Post,
+                                                    new { enctype = "multipart/form-data" }))
+{
+    <fieldset>
+        <legend>Upload Form</legend>
+        <ol>
+            <li>
+                <label>Project Language </label>
+                @Html.TextBoxFor(Model => Model.ProjectLanguage)
+            </li>
+            <li>
+                <label>Description </label>
+                
+                @Html.TextBoxFor(Model => Model.ProjectDescription)
+            </li>
+            <li>
+                <label>upload </label>
+                <input type="file" id="fileInput" name="fileInput">
+            </li>
+            <li>
+                <input type="submit" value="Upload" id="ajaxUploadButton" class="btn">
+            </li>
+        </ol>
+    </fieldset>
+}
+@*</form>*@
+

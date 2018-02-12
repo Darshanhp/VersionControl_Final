@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Folder Explorer";
+}
+@{Uri uri = Request.Url;}
+<style>
+#menuHeaderul  {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menuHeaderul li {
+    display: inline;
+}
+    </style>
+@*Show the current directory name using page URL. *@
+<h2>@Server.UrlDecode(uri.Segments.Last())</h2>
+
+@*If we were in root folder then don't show the up one level image. *@
+@if (uri.AbsolutePath.ToLower() != "/explorer/")
+{
+    <div>
+        <ul class="#menuHeaderul">
+            <li class="#menuHeaderul">
+                @*Making a URL to go to main repository. *@
+                <label>Home</label>
+                <a title="Root"
+                   href="http://localhost:14168/Home/UserProjects/">
+                    <img src="/Content/up.png" alt="Up" style="width: 20px; height: 20px; border: none" />
+
+                </a>
+            </li>
+
+            <li class="#menuHeaderul">
+                @*Making a URL to going up one level. *@
+
+                <label>Back</label>
+                <a title="Parent"
+                   href="@if(uri.AbsoluteUri != "http://localhost:14168/Explorer/index/"||uri.AbsoluteUri != "http://localhost:14168/Explorer/index")
+                       {
+                           @uri.AbsoluteUri.Remove(uri.AbsoluteUri.Length - uri.Segments.Last().Length)
+                       }">
+                    <img src="/Content/up.png" alt="Up" style="width: 20px; height: 20px; border: none" />
+
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+}
+<ul>
+    @*Listing the directories *@
+    @foreach (CodeRepository.UI.Models.DirModel dir in Model.dirModelList)
+    {
+        <li>
+            <img src="/Content/folder.png" alt="Folder Logo" align="top" style="width: 20px;
+                height: 20px; border: none" />
+            <a href="@dir.DirName/" title="@dir.DirName">@dir.DirName</a>
+            . . . . . . @dir.DirAccessed
+        </li>
+    }
+    @*Listing the files *@
+    @foreach (CodeRepository.UI.Models.FileModel file in Model.fileModelList)
+    {
+        <li>
+            <a href="@(uri.AbsolutePath + file.FileName)"
+               title="@file.FileName" target="_blank">
+                @file.FileName
+            </a>. . . . . . @file.FileSizeText
+            . . . . . . @file.FileAccessed
+        </li>
+    }
+    <li>
+        <asp:TextBox ID="TextBox2" Height="250px" Width="100%"
+                     TextMode="MultiLine"></asp:TextBox>
+    </li>
+</ul>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeRepository.Data", "CodeRep\CodeRepository.Data.csproj", "{0281D8B6-0D09-44FC-8989-19AC5A8EE70C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeRepository.Web", "CodeRep.Web\CodeRepository.Web.csproj", "{D8CCFE5F-59FD-4C01-A93D-FD58D22DD7C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeRepository.UI", "CodeRepository.UI\CodeRepository.UI.csproj", "{02992F4B-DFE6-4E7B-AE57-70F88BBFDF44}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0281D8B6-0D09-44FC-8989-19AC5A8EE70C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0281D8B6-0D09-44FC-8989-19AC5A8EE70C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0281D8B6-0D09-44FC-8989-19AC5A8EE70C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0281D8B6-0D09-44FC-8989-19AC5A8EE70C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8CCFE5F-59FD-4C01-A93D-FD58D22DD7C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8CCFE5F-59FD-4C01-A93D-FD58D22DD7C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8CCFE5F-59FD-4C01-A93D-FD58D22DD7C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8CCFE5F-59FD-4C01-A93D-FD58D22DD7C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02992F4B-DFE6-4E7B-AE57-70F88BBFDF44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02992F4B-DFE6-4E7B-AE57-70F88BBFDF44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02992F4B-DFE6-4E7B-AE57-70F88BBFDF44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02992F4B-DFE6-4E7B-AE57-70F88BBFDF44}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
